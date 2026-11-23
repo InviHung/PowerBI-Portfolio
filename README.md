@@ -1,79 +1,125 @@
-Power BI Portfolio
 
-V tomto repozitáři jsou dva menší projekty, na kterých jsem si vyzkoušel práci v Power BI.
+# Power BI Portfolio
+
+V tomto repozitáři jsou dva menší projekty, na kterých jsem si vyzkoušel práci s Power BI.
 
 S Power BI jsem se poprvé setkal ve škole, kde jsem si vyzkoušel jeho základní funkce. První projekt jsem zaměřil na esport, konkrétně na League of Legends, který mě osobně zajímá.
 
-Druhý projekt jsem vytvořil jako další praktickou ukázku práce s Power BI. Chtěl jsem si vyzkoušet něco, co je bližší reálnému využití Business Intelligence ve firmách, a zároveň si procvičit práci s datovým modelem, DAX a vizualizacemi.
+Druhý projekt jsem vytvořil jako další praktickou ukázku svých dosavadních zkušeností s Power BI. Chtěl jsem si vyzkoušet něco, co je bližší reálnému využití Business Intelligence ve firmách, a zároveň si procvičit práci s datovým modelem, DAX a vizualizacemi.
 
-1. LCK 2026 – ADC Scouting Analytics
+---
 
-Zdroj dat: Oracle's Elixir
+## 1. LCK 2026 – ADC Scouting Analytics
 
-Tento projekt vznikl v rámci mého zkoušení Power BI ve škole. Jelikož se zajímám o profesionální League of Legends, rozhodl jsem se pracovat se statistikami hráčů z korejské ligy LCK.
+**Zdroj dat:** Oracle's Elixir
+
+Tento projekt navazuje na moje první zkušenosti s Power BI ve škole. Jelikož se zajímám o profesionální League of Legends, rozhodl jsem se pracovat se statistikami hráčů z korejské ligy LCK.
 
 Cílem bylo vytvořit jednoduchý analytický report, který umožňuje porovnávat výkonnost jednotlivých ADC hráčů.
 
-Projekt obsahuje dvě stránky:
+### ADC Overview
 
-ADC Overview
+První stránka slouží k celkovému porovnání hráčů.
 
-Přehled hráčů podle statistik Win Rate, KDA a Damage Per Minute. Zajímalo mě také, jestli existuje vztah mezi KDA a Win Rate, proto jsem vytvořil bodový graf s regresní přímkou.
+Zaměřil jsem se především na:
 
-ADC Scouting Profile
+- Win Rate – úspěšnost hráče.
+- KDA – poměr killů a asistencí ke smrtím.
+- DPM – způsobené poškození za minutu.
 
-Druhá stránka umožňuje vybrat konkrétního hráče a podívat se podrobněji na jeho výkonnost. Obsahuje například statistiky z úvodních 15 minut hry, podíl na týmovém poškození, účast na killech a přehled odehraných šampionů.
+Zajímalo mě také, jestli existuje vztah mezi KDA a Win Rate. Proto jsem vytvořil bodový graf s regresní přímkou.
 
-Při práci jsem využil Power Query k úpravě dat a DAX k výpočtu jednotlivých statistik.
+### ADC Scouting Profile
 
-Analýza vychází z vybraných zápasů LCK Cup 2026. Samotné statistiky samozřejmě nepostihují všechny faktory, které ovlivňují výkon hráče.
+Druhá stránka funguje jako jednoduchý scouting report. Uživatel si může vybrat konkrétního hráče a zobrazit jeho statistiky.
 
-2. Sales Performance Dashboard
+Report obsahuje:
 
-Zdroj dat: Microsoft AdventureWorks
+- Win Rate, KDA a DPM.
+- Počet odehraných her.
+- Gold Difference v 15. minutě (GD@15).
+- CS Difference v 15. minutě (CSD@15).
+- XP Difference v 15. minutě (XPD@15).
+- Damage Share a Kill Participation.
+- Přehled odehraných šampionů.
+
+Při práci jsem využil Power Query pro filtrování a úpravu dat a DAX pro výpočty jednotlivých metrik.
+
+Je potřeba brát v úvahu, že samotné statistiky nemusí objektivně vypovídat o kvalitě hráče, protože je ovlivňuje také síla týmu, výběr šampionů nebo herní styl.
+
+Analýza se vztahuje k vybraným zápasům LCK Cup 2026, nikoliv k celé sezoně LCK.
+
+
+
+## 2. Sales Performance Dashboard
+
+**Zdroj dat:** Microsoft AdventureWorks
 
 Druhý projekt jsem vytvořil jako praktickou ukázku práce s obchodními daty.
 
-Chtěl jsem si vyzkoušet, jak by mohl vypadat jednoduchý report pro sledování obchodních výsledků společnosti.
+Chtěl jsem si vyzkoušet, jak by mohl vypadat jednoduchý dashboard pro sledování obchodních výsledků společnosti.
 
 Pracoval jsem s ukázkovým datasetem AdventureWorks od Microsoftu.
 
-Nejdříve jsem si prošel strukturu dat a datový model. Zaměřil jsem se především na propojení faktové tabulky Sales s dimenzemi pomocí relací.
+### Datový model
 
-Následně jsem pomocí DAX vytvořil metriky pro výpočet tržeb, nákladů, hrubého zisku a marže.
+Nejdříve jsem si prošel strukturu dat a jejich vzájemné vztahy.
+
+Pracoval jsem s faktovou tabulkou Sales, která obsahuje informace o prodejích, a dimenzionálními tabulkami, například Product, Customer, Date nebo SalesTerritory.
+
+Pomocí relací jsem propojil časovou dimenzi s prodejními daty, abych mohl sledovat obchodní výsledky podle jednotlivých období.
+
+### DAX metriky
+
+Pro analýzu jsem vytvořil tyto metriky:
+
+- Total Revenue – celkové tržby.
+- Total Cost – náklady na prodané produkty.
+- Gross Profit – hrubý zisk.
+- Gross Margin – hrubá marže v procentech.
+
+### Sales Dashboard
 
 Dashboard umožňuje:
 
-Sledovat tržby, náklady a ziskovost společnosti.
+- Sledovat celkové tržby, náklady a ziskovost společnosti.
+- Filtrovat výsledky podle fiskálního roku a měsíce.
+- Porovnávat měsíční vývoj tržeb.
+- Sledovat denní tržby ve vybraném období.
+- Analyzovat tržby podle produktových kategorií.
+- Porovnávat tržby mezi jednotlivými zeměmi.
 
-Filtrovat výsledky podle fiskálního roku a měsíce.
+Na tomto projektu jsem si chtěl především procvičit práci s datovým modelem, relacemi mezi tabulkami a jejich vlivem na filtrování jednotlivých vizualizací.
 
-Porovnávat měsíční a denní vývoj tržeb.
 
-Analyzovat tržby podle produktových kategorií.
 
-Porovnávat výsledky jednotlivých zemí.
+## 3. Použité technologie
 
-Na tomto projektu jsem si chtěl především procvičit, jak fungují relace mezi tabulkami a jak se jejich prostřednictvím promítají filtry do jednotlivých vizualizací.
+- **Power BI Desktop** – tvorba reportů a vizualizací.
+- **Power Query** – načítání, filtrování a úprava dat.
+- **DAX** – výpočty analytických metrik.
+- **Datové modelování** – práce s faktovými a dimenzionálními tabulkami.
+- **GitHub** – uložení a sdílení projektů.
 
-Použité technologie
 
-Power BI Desktop – tvorba reportů a vizualizací.
 
-Power Query – načítání a úprava dat.
+## 4. Jak otevřít projekty
 
-DAX – výpočty vlastních metrik.
+Oba projekty jsou uložené ve formátu `.pbix`.Jednotlivé soubory je možné stáhnout přímo z tohoto repozitáře a otevřít v Power BI Desktop.
 
-Datové modelování – práce s faktovými a dimenzionálními tabulkami.
 
-Otevření projektů
+---
+## 5. Zdroje dat
 
-Oba projekty jsou uložené ve formátu .pbix a lze je otevřít v Microsoft Power BI Desktop.
+- [Microsoft AdventureWorks – Power BI Samples](https://github.com/microsoft/powerbi-desktop-samples)
+- [Oracle's Elixir – Esports Data](https://oracleselixir.com/)
 
-Zdroje dat
 
-Microsoft AdventureWorks
+## Závěrem
 
-Oracle's Elixir
+Oba projekty beru především jako praktické procvičení Power BI.
 
-Oba projekty beru především jako praktické procvičení Power BI. Jsem stále ve fázi učení, ale chtěl jsem si vyzkoušet práci s reálnějšími daty a vytvořit reporty, které mají konkrétní analytický účel.
+Jsem stále ve fázi učení, ale chtěl jsem si vyzkoušet práci s různými typy dat a vytvořit reporty, které mají konkrétní analytický účel.
+
+První projekt se zaměřuje na oblast, která mě osobně zajímá, zatímco druhý na využití Business Intelligence při vyhodnocování obchodních výsledků.
+
